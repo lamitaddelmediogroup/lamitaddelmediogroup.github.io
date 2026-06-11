@@ -1223,9 +1223,8 @@ body::after {
   width: clamp(220px, 62vw, 320px);
   height: auto;
   border-radius: .9rem;
-  background: #fff;
-  padding: .9rem 1.1rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, .35)
+  background: var(--dark);
+  padding: .9rem 1.1rem
 }
 
 .qr-block .qr-url {
