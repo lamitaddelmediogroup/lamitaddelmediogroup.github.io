@@ -11,11 +11,18 @@
 :root {
   --dark: #0a0a0a;
   --light: #f0ede8;
-  --gold: #D4A017;
-  --gold-light: #FFDC82;
-  --gold-dark: #A67C00;
-  --gold-glow: rgba(212, 160, 23, .25);
+  --green: #8CC63F;
+  --green-light: #A8D86B;
+  --green-dark: #6BA82F;
+  /* Verde oscurecido para texto sobre fondo claro/crema (contraste AA) */
+  --green-on-light: #3F7A12;
+  --green-glow: rgba(140, 198, 63, .28);
   --glass: rgba(10, 10, 10, .75);
+  /* Retro-compat aliases — consumers que aún usan var(--gold*) resuelven a verde */
+  --gold: var(--green);
+  --gold-light: var(--green-light);
+  --gold-dark: var(--green-dark);
+  --gold-glow: var(--green-glow);
 }
 
 html {
@@ -164,12 +171,14 @@ body::after {
   background: var(--glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 160, 23, .1)
+  border-bottom: 1px solid rgba(140, 198, 63, .1)
 }
 
 .nav-logo {
-  height: 3rem;
-  filter: drop-shadow(0 0 8px rgba(212, 160, 23, .4))
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(140, 198, 63, .4))
 }
 
 .nav-links {
@@ -395,8 +404,8 @@ body::after {
 
 /* TICKER */
 .ticker {
-  border-top: 1px solid rgba(212, 160, 23, .2);
-  border-bottom: 1px solid rgba(212, 160, 23, .2);
+  border-top: 1px solid rgba(140, 198, 63, .2);
+  border-bottom: 1px solid rgba(140, 198, 63, .2);
   padding: 1rem 0;
   background: var(--gold);
   color: var(--dark);
@@ -649,7 +658,7 @@ body::after {
   overflow: hidden;
   border-radius: .8rem;
   background: #141210;
-  border: 1px solid rgba(212, 160, 23, .07);
+  border: 1px solid rgba(140, 198, 63, .07);
   aspect-ratio: 1/1
 }
 
@@ -755,7 +764,7 @@ body::after {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 2rem;
-  border: 1px solid rgba(212, 160, 23, .2);
+  border: 1px solid rgba(140, 198, 63, .2);
   border-radius: 1rem;
   min-width: 120px;
   text-align: center;
@@ -808,7 +817,7 @@ body::after {
 }
 
 .crew-hd h2 span {
-  color: var(--gold)
+  color: var(--green-on-light)
 }
 
 .crew-hd p {
@@ -854,13 +863,13 @@ body::after {
 }
 
 .crew-name-card:hover h4 {
-  color: var(--gold-dark)
+  color: var(--green-on-light)
 }
 
 .crew-name-card .rl {
   font-size: .55rem;
   font-weight: 700;
-  color: var(--gold-dark);
+  color: var(--green-on-light);
   text-transform: uppercase;
   letter-spacing: .18em;
   white-space: nowrap
@@ -923,7 +932,7 @@ body::after {
   overflow: hidden;
   aspect-ratio: 16/9;
   background: #141210;
-  border: 1px solid rgba(212, 160, 23, .1);
+  border: 1px solid rgba(140, 198, 63, .1);
   cursor: pointer;
   transition: border-color .3s, transform .3s
 }
@@ -988,7 +997,7 @@ body::after {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(212, 160, 23, .85);
+  background: rgba(140, 198, 63, .85);
   border: none;
   color: var(--dark);
   font-size: 1.3rem;
@@ -1022,7 +1031,7 @@ body::after {
 
 .logo-card {
   background: rgba(240, 237, 232, .04);
-  border: 1px solid rgba(212, 160, 23, .08);
+  border: 1px solid rgba(140, 198, 63, .08);
   border-radius: 1rem;
   padding: 1.8rem 1rem;
   display: flex;
@@ -1039,7 +1048,7 @@ body::after {
 .logo-card:hover {
   border-color: var(--gold);
   transform: translateY(-4px);
-  background: rgba(212, 160, 23, .06)
+  background: rgba(140, 198, 63, .06)
 }
 
 .logo-card img {
@@ -1192,6 +1201,39 @@ body::after {
   padding: 0 1.5rem
 }
 
+/* QR BLOCK (contacto) */
+.qr-block {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  position: relative;
+  z-index: 2
+}
+
+.qr-block .qr-label {
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-weight: 700
+}
+
+.qr-block img {
+  width: clamp(120px, 30vw, 170px);
+  height: auto;
+  border-radius: .8rem;
+  background: var(--dark);
+  padding: .6rem
+}
+
+.qr-block .qr-url {
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: .05em
+}
+
 /* WHATSAPP COUNTRY BUTTONS */
 .wa-countries {
   margin-top: 2.5rem;
@@ -1258,7 +1300,7 @@ body::after {
   }
 
   .nav-logo {
-    height: 3.2rem
+    height: 44px
   }
 
   .nav-links {
