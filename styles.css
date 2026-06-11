@@ -1220,11 +1220,12 @@ body::after {
 }
 
 .qr-block img {
-  width: clamp(120px, 30vw, 170px);
+  width: clamp(220px, 62vw, 320px);
   height: auto;
-  border-radius: .8rem;
-  background: var(--dark);
-  padding: .6rem
+  border-radius: .9rem;
+  background: #fff;
+  padding: .9rem 1.1rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35)
 }
 
 .qr-block .qr-url {
