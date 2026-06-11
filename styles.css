@@ -1433,3 +1433,43 @@ body::after {
     bottom: 2rem
   }
 }
+
+/* ===== EVENTOS: galería masonry (sin recorte, proporción natural del feed IG) ===== */
+#tab-eventos .bento {
+  display: block;
+  column-count: 2;
+  column-gap: 1rem;
+}
+
+#tab-eventos .bento-item {
+  display: block;
+  width: 100%;
+  aspect-ratio: auto;
+  grid-column: auto;
+  grid-row: auto;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+#tab-eventos .bento-item img {
+  height: auto;
+  object-fit: contain;
+}
+
+/* overlay de campaña: siempre legible en masonry (degradado base) */
+#tab-eventos .bento-item .ov {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(10, 10, 10, .82), transparent 42%);
+}
+
+@media (min-width: 768px) {
+  #tab-eventos .bento {
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+
+  #tab-eventos .bento-item {
+    margin-bottom: 1.5rem;
+  }
+}
