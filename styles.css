@@ -565,6 +565,25 @@ body::after {
   line-height: 1
 }
 
+.srv-head {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  z-index: 2;
+  max-width: 62%;
+  pointer-events: none
+}
+
+.srv-desc {
+  font-size: clamp(.72rem, 1.3vw, .95rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+  opacity: .5;
+  max-width: 36ch
+}
+
 .srv-row .n {
   font-size: clamp(.8rem, 1.5vw, 1.2rem);
   font-weight: 300;
